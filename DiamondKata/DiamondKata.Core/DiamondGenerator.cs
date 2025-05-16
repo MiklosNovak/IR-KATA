@@ -2,26 +2,26 @@
 
 public class DiamondGenerator
 {
-    public string Generate(char input)
+    public string Generate(char targetLetter)
     {
-        EnsureValidLetter(input);
+        EnsureValidLetter(targetLetter);
 
-        var rows = BuildRows(input);
+        var diamondLines = BuildLines(targetLetter);
 
-        return string.Join(Environment.NewLine, rows);
+        return string.Join(Environment.NewLine, diamondLines);
     }
 
-    private static IEnumerable<string> BuildRows(char input)
+    private static IEnumerable<string> BuildLines(char targetLetter)
     {
-        var letters = GetLetters(input);
+        var letters = GetDiamondCharacterSequence(targetLetter);
 
         foreach (var letter in letters)
         {
-            yield return BuildRow(input, letter);
+            yield return BuildLine(targetLetter, letter);
         }
     }
 
-    private static string BuildRow(char targetLetter, char currentLetter)
+    private static string BuildLine(char targetLetter, char currentLetter)
     {
         var rowWidth = (targetLetter - 'A') * 2 + 1;
         var padding = targetLetter - currentLetter;
@@ -33,7 +33,7 @@ public class DiamondGenerator
         return new string(diamondRow);
     }
 
-    private static IEnumerable<char> GetLetters(char targetLetter)
+    private static IEnumerable<char> GetDiamondCharacterSequence(char targetLetter)
     {
         for (var ch = 'A'; ch < targetLetter; ch++)
             yield return ch;
@@ -42,13 +42,13 @@ public class DiamondGenerator
             yield return ch;
     }
 
-    private static void EnsureValidLetter(char input)
+    private static void EnsureValidLetter(char targetLetter)
     {
-        var isUppercaseLetter = input is >= 'A' and <= 'Z';
+        var isUppercaseLetter = targetLetter is >= 'A' and <= 'Z';
 
         if (!isUppercaseLetter)
         {
-            throw new ArgumentOutOfRangeException(nameof(input), "Input must be a single uppercase letter (A-Z).");
+            throw new ArgumentOutOfRangeException(nameof(targetLetter), "Input must be a single uppercase letter (A-Z).");
         }
     }
 }
