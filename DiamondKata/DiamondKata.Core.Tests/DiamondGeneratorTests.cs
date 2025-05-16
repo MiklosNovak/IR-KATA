@@ -21,4 +21,17 @@ public class DiamondGeneratorTests
         action.Should().Throw<ArgumentOutOfRangeException>().Which.Message.Should()
             .Contain("Input must be a single uppercase letter (A-Z).");
     }
+
+    [TestMethod]
+    public void Generate_ShouldReturnSingleA_WhenInputIsA()
+    {
+        // Arrange
+        var input = 'A';
+
+        // Act
+        var result = _diamondGenerator.Generate(input);
+
+        // Assert
+        result.Should().Be("A");
+    }
 }

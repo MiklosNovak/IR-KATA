@@ -2,9 +2,10 @@
 
 public class DiamondGenerator
 {
-    public void Generate(char input)
+    public string Generate(char input)
     {
         EnsureValidLetter(input);
+        return null;
     }
 
     private static void EnsureValidLetter(char input)
@@ -13,7 +14,7 @@ public class DiamondGenerator
 
         if (!isUppercaseLetter)
         {
-            throw new ArgumentOutOfRangeException(nameof(input), $"Input must be a single uppercase letter (A-Z).");
+            throw new ArgumentOutOfRangeException(nameof(input), "Input must be a single uppercase letter (A-Z).");
         }
     }
 }
