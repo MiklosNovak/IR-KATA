@@ -7,6 +7,8 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "DiamondKata.Core", "Diamond
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "DiamondKata.Core.Tests", "DiamondKata.Core.Tests\DiamondKata.Core.Tests.csproj", "{D9053FAB-1862-4BC6-AB2E-3B70E66A78A4}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "DiamondKata.ConsoleApp", "DiamondKata.ConsoleApp\DiamondKata.ConsoleApp.csproj", "{1E501AF4-AB1A-428A-9964-AD8675B9F041}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -21,6 +23,10 @@ Global
 		{D9053FAB-1862-4BC6-AB2E-3B70E66A78A4}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{D9053FAB-1862-4BC6-AB2E-3B70E66A78A4}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{D9053FAB-1862-4BC6-AB2E-3B70E66A78A4}.Release|Any CPU.Build.0 = Release|Any CPU
+		{1E501AF4-AB1A-428A-9964-AD8675B9F041}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{1E501AF4-AB1A-428A-9964-AD8675B9F041}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{1E501AF4-AB1A-428A-9964-AD8675B9F041}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{1E501AF4-AB1A-428A-9964-AD8675B9F041}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
