@@ -6,9 +6,31 @@ public class DiamondGenerator
     {
         EnsureValidLetter(input);
 
-        var letters = GetLetters(input).ToArray();
+        var rows = BuildRows(input);
 
-        return string.Join(Environment.NewLine, letters);
+        return string.Join(Environment.NewLine, rows);
+    }
+
+    private static IEnumerable<string> BuildRows(char input)
+    {
+        var letters = GetLetters(input);
+
+        foreach (var letter in letters)
+        {
+            yield return BuildRow(input, letter);
+        }
+    }
+
+    private static string BuildRow(char targetLetter, char currentLetter)
+    {
+        var rowWidth = (targetLetter - 'A') * 2 + 1;
+        var padding = targetLetter - currentLetter;
+
+        var diamondRow = Enumerable.Repeat(' ', rowWidth).ToArray();
+        diamondRow[padding] = currentLetter;
+        diamondRow[rowWidth - padding - 1] = currentLetter;
+
+        return new string(diamondRow);
     }
 
     private static IEnumerable<char> GetLetters(char targetLetter)
