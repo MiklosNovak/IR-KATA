@@ -56,4 +56,24 @@ public class DiamondGeneratorTests
 
         actualCharacters.Should().BeEquivalentTo(expectedCharacters);
     }
+
+    [TestMethod]
+    public void Generate_ShouldReturnDiamondShapeAlignedBySpaces()
+    {
+        // Arrange
+        var letter = 'C';
+
+        // Act
+        var diamond = _diamondGenerator.Generate(letter);
+
+        // Assert
+        var expected = """
+                         A  
+                        B B 
+                       C   C
+                        B B 
+                         A  
+                       """;
+        diamond.Should().Be(expected);
+    }
 }
