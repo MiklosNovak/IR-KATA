@@ -2,8 +2,18 @@
 
 public class DiamondGenerator
 {
-    public object Generate(char input)
+    public void Generate(char input)
     {
-        throw new NotImplementedException();
+        EnsureValidLetter(input);
+    }
+
+    private static void EnsureValidLetter(char input)
+    {
+        var isUppercaseLetter = input is >= 'A' and <= 'Z';
+
+        if (!isUppercaseLetter)
+        {
+            throw new ArgumentOutOfRangeException(nameof(input), $"Input must be a single uppercase letter (A-Z).");
+        }
     }
 }
