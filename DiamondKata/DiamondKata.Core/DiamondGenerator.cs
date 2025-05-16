@@ -5,7 +5,7 @@ public class DiamondGenerator
     public string Generate(char input)
     {
         EnsureValidLetter(input);
-        return null;
+        return input.ToString();
     }
 
     private static void EnsureValidLetter(char input)
