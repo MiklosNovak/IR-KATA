@@ -52,8 +52,7 @@ public class DiamondGeneratorTests
 
         var actualCharacters = result
             .Split(Environment.NewLine, StringSplitOptions.RemoveEmptyEntries)
-            .Select(line => line.FirstOrDefault(char.IsLetter))
-            .ToArray();
+            .Select(line => line.FirstOrDefault(char.IsLetter));
 
         actualCharacters.Should().BeEquivalentTo(expectedCharacters);
     }
