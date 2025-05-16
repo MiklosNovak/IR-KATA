@@ -34,4 +34,27 @@ public class DiamondGeneratorTests
         // Assert
         result.Should().Be("A");
     }
+
+    [TestMethod]
+    public void Generate_ShouldPlaceCharactersInExpectedOrderInEachRow()
+    {
+        // Arrange
+        var input = 'D';
+
+        // Act
+        var result = _diamondGenerator.Generate(input);
+
+        // Assert
+        var expectedCharacters = new[]
+        {
+            'A', 'B', 'C', 'D', 'C', 'B', 'A'
+        };
+
+        var actualCharacters = result
+            .Split(Environment.NewLine, StringSplitOptions.RemoveEmptyEntries)
+            .Select(line => line.FirstOrDefault(char.IsLetter))
+            .ToArray();
+
+        actualCharacters.Should().BeEquivalentTo(expectedCharacters);
+    }
 }
